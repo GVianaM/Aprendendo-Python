@@ -1,0 +1,180 @@
+<html xmlns:tomboy="http://beatniksoftware.com/tomboy" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns:link="http://beatniksoftware.com/tomboy/link"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Aprendendo Python</title><style type="text/css">
+	body {  }
+	h1 { font-size: xx-large;
+     	     font-weight: bold;
+     	     border-bottom: 1px solid black; }
+	div.note {
+		   position: relative;
+		   display: block;
+		   padding: 5pt;
+		   margin: 5pt; 
+		   white-space: -moz-pre-wrap; /* Mozilla */
+ 	      	   white-space: -pre-wrap;     /* Opera 4 - 6 */
+ 	      	   white-space: -o-pre-wrap;   /* Opera 7 */
+ 	      	   white-space: pre-wrap;      /* CSS3 */
+ 	      	   word-wrap: break-word;      /* IE 5.5+ */ }
+	</style></head><body><div class="note" id="Aprendendo Python"><a name="aprendendo python"></a><h1>Aprendendo Python </h1><a style="color:#3465A4" href="https://aprendendo-computacao-com-python.readthedocs.io/en/latest/index.html">https://aprendendo-computacao-com-python.readthedocs.io/en/latest/index.html</a>
+
+<b><span style="background:yellow">Debugging</span></b>
+~ Erros em programas são chamados de <b>bugs</b> e o processo de encontrá-los e corrigi-los é chamado de <b>debugging</b>
+~ Existem três tipos de erros que podem acontecer: Erros de sintaxe, erros de runtime (tempo de execução), e erros de semântica.
+~ Os erros de sintaxe se referem a estrutura do programa e às regras sobre a estutura, como falta ou acréscimo de pontos, virgulas e etc. Os erros de sintaxe fazem com que o programa não rode.
+~ Runtime Errors só aparecem quando rodamos o programa, indicam que algo de ruim aconteceu.
+~ Os erros de semântica não vão gerar nenhuma mensagem de erro, o programa apenas não irá fazer a coisa certa, irá fazer algma outra coisa. Para solucionar esse erro precisamos trabalhar de trás para frente, olhando a saída do programa e tentando imaginar o que ele está fazendo.
+
+<b><span style="background:yellow">Nome de variáveis e palavras reservadas</span></b>
+~ Nomes de variáveis podem ser longos, porém os espaços devem ser completados com underline ( <span style="background:yellow">_</span> ), por exemplo: <span style="background:yellow">preco_do_cha</span>. Eles podem conter tanto letras quanto números, mas têm de começar com uma letra.
+~ Lembre-se que letras maiúsculas e minúsculas são diferentes. <span style="background:yellow">Pato</span> e <span style="background:yellow">pato</span> são variáveis diferentes.
+~ <span style="background:yellow">muito$</span> é uma variável inválida por conter caractere ilegal.
+~ Python tem 29 palavras reservadas nas quais não conseguimos criar variáveis, funções e etc. são elas:
+
+<span style="background:yellow">and</span>            <span style="background:yellow">def</span>         <span style="background:yellow">exec</span>           <span style="background:yellow">if</span>                 <span style="background:yellow">not</span>             <span style="background:yellow">return</span>
+<span style="background:yellow">assert</span>         <span style="background:yellow">del</span>         <span style="background:yellow">finally</span>        <span style="background:yellow">import</span>       <span style="background:yellow">or</span>               <span style="background:yellow">try</span>
+<span style="background:yellow">break</span>         <span style="background:yellow">elif</span>         <span style="background:yellow">for</span>             <span style="background:yellow">in</span>                 <span style="background:yellow">pass</span>           <span style="background:yellow">while</span>
+<span style="background:yellow">class</span>           <span style="background:yellow">else</span>        <span style="background:yellow">from</span>          <span style="background:yellow">is</span>                 <span style="background:yellow">print</span>          <span style="background:yellow">yield</span>
+<span style="background:yellow">continue</span>   <span style="background:yellow">except</span>    <span style="background:yellow">global</span>       <span style="background:yellow">lambda</span>       <span style="background:yellow">raise</span>
+
+<b><span style="background:yellow">Operadores e operandos</span></b>
+~ Operadores são símbolos especais que representam operações matemáticas. Os valores que o operador utiliza são chamados de operandos.
+~ Os símbolos <span style="background:yellow">+</span>, <span style="background:yellow">-</span>, <span style="background:yellow">/</span> e o uso de parênteses para agrupamento têm o mesmo significado que na matemática. O asterisco sozinho ( <span style="background:yellow">*</span> ) é o símbolo para multiplicação e o aterisco duplo ( <span style="background:yellow">**</span> ) é o símbolo para potenciação.
+
+<b><span style="background:yellow">Ordem dos operadores</span></b>
+~ Quando mais de um operador aparece em uma expressão, a ordem de avaliação depende das <b>regras de precedência</b>. O acrônimo <b>PEMDAS</b> é uma prática de lembrar a ordem das operações:
+~ <b>P</b>: Parênteses têm a mais alta precedência e pode ser usado para forçar uma expressão a ser avaliada na ordem que você quiser. Exemplo: 2 * (3 - 1) é 4.
+~ <b>E</b>: Exponenciação ou Potenciação tem a próxima precedência mais alta. Exemplo: 3 * 1 ** 3 é 3 e não 27.
+~ <b>MDAS</b>: Multiplicação e Divisão têm a mesma precedência, sendo elas mais altas que Adição e Subtração. Exemplo: 2 * 3 - 1 é 5 e não 4. 
+~ Operadores com a mesma precedência são avaliados da esquerda para direita.
+
+<b><span style="background:yellow">Adicionando novas funções</span></b>
+~ <b>Função</b> é uma sequência nomeada de instruções ou comandos, que realizam uma operação desejada. Esta operação é especificada numa <b>definição de função</b>.
+~ A sintaxe para uma definição de função é:
+<span style="background:yellow">def NOME_DA_FUNCAO ( LISTA DE PARAMETROS ) :
+       COMANDOS                                                            </span>
+~ Você pode usar o nome que quiser para as funções que criar. 
+~ A lista de parâmetros especifica que informação você deve fornecer para poder usar a nova função. 
+~ Uma função pode ter quantos comandos forem necessários, mas eles precisam ser endentados a partir da margem esquerda.
+~ Parênteses vazios indicam que a função não tem parâmetros. 
+
+<b><span style="background:yellow">Operador módulo</span></b>
+~ O <b>operador módulo </b>produz o resto da divisão do primeiro pelo segundo, ele é representado pelo símbolo de porcentagem ( <span style="background:yellow">%</span> ). 
+Exemplo:
+<b><span style="background:yellow">&gt;&gt;&gt;</span></b><span style="background:yellow"> quociente = 7 / 3 
+<b>&gt;&gt;&gt;</b></span><span style="background:yellow"> print quociente   
+<b>2</b></span><span style="background:yellow">                                   
+<b>&gt;&gt;&gt;</b></span><span style="background:yellow"> resto = 7 % 3        
+<b>&gt;&gt;&gt;</b></span><span style="background:yellow"> print resto           
+<b>1</b></span><span style="background:yellow">                                   </span>
+
+<b><span style="background:yellow">Expressões booleanas</span></b>
+~ Expressão booleana é uma expressão que retorna True ou False. Uma expressão que é verdadeira tem o valor 1, e uma que é falsa tem o valor 0.
+~ <b>Operadores de comparação</b>:
+x <span style="background:yellow">==</span> y          x é <span style="background:yellow">igual</span> a y
+x <span style="background:yellow">!=</span> y           x é <span style="background:yellow">diferente de</span> y
+x <span style="background:yellow">&gt;</span> y            x é <span style="background:yellow">maior que</span> y
+x <span style="background:yellow">&lt;</span> y            x é <span style="background:yellow">menor que</span> y
+x <span style="background:yellow">&gt;=</span> y          x é <span style="background:yellow">maior ou igual a</span> y
+x <span style="background:yellow">&lt;=</span> y          x é <span style="background:yellow">menor ou igual a</span> y
+
+~ Existem três tipos de <b>operadores lógicos</b>, são eles: <span style="background:yellow">and</span>, <span style="background:yellow">or</span>, <span style="background:yellow">not</span>.
+~ Para que <span style="background:yellow">and</span> seja verdadeiro é necessário que as duas operações sejam verdadeiras. Por exemplo: <span style="background:yellow">x &gt; 0 and x &lt; 10</span> é verdadeiro somente se x for maior do que 0 e menor do que 10. 
+~ Para que <span style="background:yellow">or</span> seja verdadeiro é necessário que apenas uma das operações seja verdadeira. Por exemplo: <span style="background:yellow">x == 0 or y == 3</span> é verdadeiro se x for igual a 0 ou y for igual a 3.
+~ Para que <span style="background:yellow">not</span> seja verdadeiro é necessário que a operação seja falsa. Por exemplo: <span style="background:yellow">not ( x &gt; y )</span> é verdadeiro se x for menor que y, ou seja , ( x &gt; y ) deve ser falso.
+
+<b><span style="background:yellow">Execução condicional</span></b>
+~ As <b>instruções condicionais</b> nos dão a habilidade de checar condições e mudar o comportamento do programa de acordo com elas. A forma mais simples é usando o <span style="background:yellow">if</span>. 
+Por exemplo:
+<span style="background:yellow">if x &gt; 0                       
+  print "x é positivo"</span>
+Neste caso se x for maior que 0 o programa irá mostrar "x é positivo", caso x não seja maior o programa não irá apresentar nada.
+~ Ocasionalmente é útil ter um corpo sem nenhuma instrução. Nesse caso podemos usar o comando <span style="background:yellow">pass</span>, que indica ao Python: " passe por aqui sem fazer nada"
+
+<b><span style="background:yellow">Execução alternativa</span></b>
+~ A <b>execução alternativa</b> é um formato de instrução na qual existem duas possibilidades e a condição ( True or False ) determina qual será executada pelo programa. Para isso utilizamos o comando <span style="background:yellow">if</span> junto do <span style="background:yellow">else</span>.
+Por exemplo:
+<span style="background:yellow">if x % 2 == 0:           
+  print x, "é par!"    
+else:                         
+  print x, "é ímpar!"</span>
+Neste caso se o resto da divisão de x por 2 for igual a 0 o programa nos mostrará que x é par, e se o resto da divisão de x por 2 não for igual a 0 ele nos mostrará que x é ímpar.
+
+<b><span style="background:yellow">Condicionais encadeados</span></b>
+~ Uma <b>condicional encadeada</b> é uma maneira de expressar uma operação com mais de dois branches. Para isso utilizamos os comandos <span style="background:yellow">if</span>, <span style="background:yellow">elif</span> e <span style="background:yellow">else</span>.
+~ O comando <span style="background:yellow">elif</span> pode ser usado seguidamente quntas vezes quiser, contanto que o ultimo comando seja o <span style="background:yellow">else</span>.
+Por exemplo:
+<span style="background:yellow">if x &lt; y:                                  
+  print x, "é menor que" , y
+elif x &gt; y:                               
+  print x, "é maior que" , y  
+else:                                       
+  print x, "e" , y, "são iguais"</span>
+Neste caso se x for menor que y o programa executará o primeiro comando, se x não for menor que y o programa irá passar para o <span style="background:yellow">elif</span> verificando se x é maior que y, caso x seja maior que y o programa irá executar o segundo comando, se x não for maior que y o programa irá executar o terceiro comando, no caso o <span style="background:yellow">else</span>, dizendo que x e y são iguais.
+
+~ As condicionais também podem ser agrupadas dentro das outras. 
+Por exemplo:
+<span style="background:yellow">if x == y:                                
+  print x, "e", y, "são iguais"
+else:                                       
+  if x &lt; y:                                
+    print x, "é menor que", y
+  else:                                    
+    print x, "é maior que", y </span>
+~ Essas condicionais agrupadas são chamadas de <b>condicionais aninhados</b>.
+
+~ O comando <span style="background:yellow">return</span> permite terminar a execução de uma função.
+Exemplo: 
+<span style="background:yellow">import math                                                             
+                                                                                   
+def imprimeLogaritimo ( x ) :                                 
+  if x &lt;= 0:                                                                  
+    print "Somente números positivos, por favor"
+    return                                                                    
+                                                                                     
+  resultado = math.log ( x )                                        
+  print "O log de x é ", resultado                              </span>
+Neste caso se x for menor ou igual a 0 o programa irá mostrar a mensagem de erro (escrita no print) e retornar ao inicio da função.
+
+<b><span style="background:yellow">Recursividade</span></b>
+~ Uma função pode chamar a si própria dentro dela.
+Por exemplo:
+<span style="background:yellow">def contagemRegressiva ( n ) : 
+  if n == 0:                                    
+    print "Fogo!"                          
+  else:                                           
+    print n                                     
+    contagemRegressiva ( n - 1 ) </span>
+Quando chamarmos a função passando um número ( n ) o programa irá fazer a contagem até o 0 e exibirá "Fogo!".
+
+<b><span style="background:yellow">Desenvolvimento incremental</span></b>
+~ Comece com um programa que funcione e faça pequenas mudanças incrementais. Em qualquer ponto do processo, se houver algum erro, você saberá exatamente onde ele está.
+~ Use variáveis temporárias para manter valores intermediários de modo que você possa checá-los
+~ Uma vez que o programa funciona, você pode querer remover algum sacffolding, mas cuidado para não tornar o programa difícil de ser lido.
+
+<b><span style="background:yellow">O comando while</span></b>
+~ Aqui está como fica contagemRegressiva com um comando <span style="background:yellow">while</span>:
+<span style="background:yellow">def contagemRegressiva ( n ) :
+  while n &gt; 0:                              
+    print n                                    
+    n = n - 1                                  
+  print "Fogo!"                            </span>
+
+~ Você quase pode ler o comando <span style="background:yellow">while</span> como se fosse Inglês. " <span style="background:yellow">While</span> n for maior do que 0, siga exibindo o valor de n e diminuindo 1 do valor de n. Quando chegar a 0, exiba a palavra Fogo!".
+
+<b><span style="background:yellow">Variáveis locais</span></b>
+~ Variáveis criadas dentro de uma definição de função são locais. Você não pode acessar uma variável local de fora da função em que ela "mora". Isto significa que você é livre para ter múltiplas variáveis com o mesmo nome, desde de que elas não estejam dentro da mesma função.
+
+<b><span style="background:yellow">Função Range</span></b>
+~ A função <span style="background:yellow">range</span> pega argumentos e devolve uma lista
+~ Com argumento simples ela cria um lista que inicia no 0 
+Exemplo:
+<span style="background:yellow">range (5)     
+[0, 1, 2, 3, 4]</span>
+
+~ Com dois argumentos ela cria uma lista com todos os inteiros do primeiro ao segundo argumento, incluindo o primeiro mas não incluindo o segundo na lista
+Exemplo:
+<span style="background:yellow">range (1, 5)
+[1, 2, 3, 4]  </span>
+
+~ Com três argumentos a função <span style="background:yellow">range</span> cria uma lista igual a com dois argumentos, porem o terceiro argumento especifica o tamanho do passo.
+Exemplo:
+<span style="background:yellow">range (1, 10, 2)
+[1, 3, 5, 7, 9]    </span></div></body></html>
