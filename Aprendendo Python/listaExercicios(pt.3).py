@@ -71,3 +71,13 @@ mLatas = litros / 18
 mGalao = (litros - round(mLatas) * 18) / 3.6
 precoTotal = round(mLatas) * 80 + round(mGalao) * 25
 print("Para pintar uma área de", area, "m2 com latas e galões será necessário", round(mLatas), "lata(s) e", round(mGalao), "galões que custarão", precoTotal,"reais")
+print()
+
+# 18. Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps),
+# calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos).
+tamanho = float(input("Qual tamanho do arquivo a ser baixado em MB?"))
+velocidade = int(input("Qual a velocidade da sua internet?"))
+mbps = velocidade / 8
+segundos = tamanho / mbps
+tempo = segundos / 60
+print("O download de", tamanho, "MB irá demorar", round(tempo, 2), "minutos")
