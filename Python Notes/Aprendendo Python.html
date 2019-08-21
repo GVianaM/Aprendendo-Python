@@ -187,4 +187,59 @@ Exemplo:
 ~ Método <span style="background:yellow">values</span>: Esse método retorna a lista de valores de um dicionário. A sintaxe para utilizar esse método é: <span style="background:yellow">nomeDoDicionario.values ( )</span>
 ~ Método <span style="background:yellow">items</span>: Esse método retorna os pares chave-valor na forma de tuplas. A sintaxe para esse método é : <span style="background:yellow">nomeDoDicionario.items ( )</span>
 ~ Método <span style="background:yellow">has_key</span>: Esse método recebe uma chave e retorna verdadeiro se a chave estiver no dicionário. A sintaxe para chamar esse comando é: <span style="background:yellow">nomeDoDicionário.has_key ( 'nomeDaChave' )</span>
-</div></body></html>
+
+<b><span style="background:yellow">Arquivos </span></b>
+~ Para utilizar um arquivo é necessário abrí-lo e quando terminar de ler ou escrever você deve fechá-lo.
+~ Para abrir um arquivo você deve especificar o nome dele e indicar o que quer fazer.
+~ A função <span style="background:yellow">open</span> recebe dois argumentos, sendo primeiro o nome do arquivo e segundo o modo. (<span style="background:yellow">"r"</span> para read e  <span style="background:yellow">"w"</span> para write). Lembre-se que essa função serve apenas para abrir o arquivo. A sintaxe é:
+<span style="background:yellow">nomeDaFunao = open ( "teste.dat", "w"  )</span>
+~ No modo write, se o nome do arquivo não existir será criado um arquivo novo, caso já exista esse arquivo será substituído pelo arquivo que estamos escrevendo.
+~ Após aberto o arquivo, para conseguirmos escrever dentro dele precisamos invocar o método write. A sintaxe para isso é: 
+<span style="background:yellow">nomeDaFuncao.write ( "Escreva aqui" )</span>
+~ Quando terminar de escrever é necessário que feche o arquivo, a sintaxe é:
+<span style="background:yellow">nomeDaFuncao.close ( )</span>
+~ Agora, caso queiramos, podemos abrir esse mesmo arquivo para leitura.
+~ Ao contrário do modo write, se tentarmos abrir um arquivo inexistente para leitura o Python irá nos exibir um erro. 
+~ O método <span style="background:yellow">readline</span> lê todos os caracteres da linha. Chamamos ele com a seguinte sintaxe: <span style="background:yellow">nomeDaFuncao.readline ( )</span>
+~ O método <span style="background:yellow">readlines</span> retorna todas as linhas restantes como uma lista de strings. 
+~ Para abrir um arquivo que fica em um diretório diferente de onde o programa é acessado é necessário especificar o caminho até esse arquivo.
+
+<b><span style="background:yellow">Gravando variáveis em arquivos</span></b>
+~ Podemos gravar variáveis utilizando a função <span style="background:yellow">str</span>
+~ Outra alternativa é utilizar o <b>operador de formatação</b> ( <span style="background:yellow">%</span> ). Tome cuidado, o símbolo de % é um operador de formatação apenas em strings, quando aplicado a inteiros ele se torna um operador módulo. A sintaxe para utilizá-lo é: 
+<span style="background:yellow">" Em <b>%d</b></span><span style="background:yellow"> dias fizemos <b>%f </b></span><span style="background:yellow">milhões de <b>%s</b></span><span style="background:yellow"> " % ( 30, 6.5, 'reais' )</span>
+~ Os <b>operadores de formatação</b> na frase acima são:
+<span style="background:yellow">%d</span> significa que a primeira expressão da tupla deve ser formatada como um inteiro
+<span style="background:yellow">%f</span> significa que a segunda expressão da tupla deve ser formatada como um número flutuante. Como padrão os números flutuantes possuem 6 casas decimais após a vírgula. 
+<span style="background:yellow">%s</span> significa que a terceira expressão da tupla deve ser formatada como uma string
+~ Para um controle maior na formatação podemos especificar o número de dígitos.
+Por exemplo:
+<span style="background:yellow">&gt;&gt;&gt; " %6d " % 62      
+'    62'                        
+&gt;&gt;&gt; " %-6d " % 62    
+'62    '                        
+&gt;&gt;&gt; " %12.2f " % 6.5
+'        6.50'                 </span>
+~ O número depois do sinal de porcentagem é o número mínimo de espaços que o valor ocupará. Caso o valor fornecido tenha um número menor de dígitos eles serão completados com espaços em branco.
+~ No exemplo do número flutuante o 12 reserva os espaços e o 2 representa o número de casas decimais.
+
+<b><span style="background:yellow">Pickling</span></b>
+~ Para retirarmos variáveis de arquivos sem que elas retornem como string precisamos utilizar o <span style="background:yellow">pickle</span>. Para utilizarmos precisamos importar a biblioteca com o comando <span style="background:yellow"> import pickle</span> e após isso abrir o arquivo.
+~ Para armazenar estrutura de dados utilizaremos o <span style="background:yellow">dump</span> e para isso o arquivo deve ser aberto em modo write. A sintaxe fica:
+<span style="background:yellow">pickle.dump ( 12.3, nomeDaFuncao)</span>
+<span style="background:yellow">nomeDaFuncao.close ( )                    </span>
+~ Para ler as estruturas de dados armazenadas usamos o método <span style="background:yellow">load</span> e para funcionar devemos abrir o arquivo em modo read. A sintaxe fica:
+<span style="background:yellow">x = pickle.load ( f )
+print ( x )               
+12,3                       </span>
+~ Cada vez que invocamos o <span style="background:yellow">load</span>, obtemos um único valor do arquivo.
+
+<b><span style="background:yellow">Exceções</span></b>
+~ Às vezes queremos executar uma operação que pode causar uma exceção, mas não queremos que o programa pare. Podemos tratar essas exceções com os comando <span style="background:yellow">try</span> e <span style="background:yellow">except</span>. A sintaxe fica:
+<span style="background:yellow">try:                                                                                              
+  f = open ( nomeDoArquivo, "r" )                                            
+except:                                                                                        
+  print ( " Não existe arquivo chamado", nomeDoArquivo )</span>
+~ A instrução <span style="background:yellow">try</span>  executa os comandos do primeiro bloco. Se não ocorrerem exceções ele ignora a instrução <span style="background:yellow">except</span>. Se qualquer exceção acontecer ele executa os comando do ramo execpt e continua o programa. Conseguimos encapsular esta habilidade em uma função, sendo ela: Existe recebe um nome de arquivo e retorna verdadeiro se o arquivo existe e falso se não existe.
+~ Pode utilizar múltiplos blocos do <span style="background:yellow">except</span> para tratar diferentes tipos de exceções.
+~ Podemos também usar o comando <span style="background:yellow">raise</span> que toma dois argumentos: o primeiro sendo o tipo da exceção, e o segundo informações específicas sobre o erro. Com esse comando você pode criar diversas exceções.</div></body></html>
