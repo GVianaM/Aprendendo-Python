@@ -36,7 +36,6 @@ print("Imposto de Renda: R$", ir)
 print("INSS: R$", inss)
 print("Sindicato: R$", sind)
 print("Salário Líquido: R$", salLiquido)
-print()
 
 # 16. Faça um programa para uma loja de tintas.
 # O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
@@ -65,8 +64,10 @@ qtdLata = area / 108
 qtdGalao = area / 21.6
 precoLata = math.ceil(qtdLata) * 80
 precoGalao = math.ceil(qtdGalao) * 25
-print("Apenas latas:", math.ceil(qtdLata), " ===", precoLata, "reais")
-print("Apenas galões:",math.ceil(qtdGalao), " ===", precoGalao, "reais")
-if precoLata == precoGalao:
-    metadeLata = 50 * precoLata / 100
-    metadeGalao = 50 * precoGalao / 100
+print("Para pintar uma área de", area, "m2 apenas com latas será necessário", math.ceil(qtdLata), "lata(s) que custarão", precoLata, "reais")
+print("Para pintar uma área de", area, "m2 apenas com galões será necessário", math.ceil(qtdGalao), "galão(ões) que custarão", precoGalao, "reais")
+litros = (area / 6) * 1.1 # 10%
+mLatas = litros / 18
+mGalao = (litros - round(mLatas) * 18) / 3.6
+precoTotal = round(mLatas) * 80 + round(mGalao) * 25
+print("Para pintar uma área de", area, "m2 com latas e galões será necessário", round(mLatas), "lata(s) e", round(mGalao), "galões que custarão", precoTotal,"reais")
