@@ -4,16 +4,16 @@ x = float(input("Escreva um número:"))
 y = float(input("Escreva outro número:"))
 z = float(input("Escreva mais um número:"))
 def maior(x, y, z):
-    if x > y and x > z:
+    if x >= y and x >= z:
         print(x, "é o maior número")
-    elif y > x and y > z:
+    elif y >= x and y >= z:
         print(y, "é o maior número")
     else:
         print(z, "é o maior número")
 def menor(x, y, z):
-    if x < y and x < z:
+    if x <= y and x <= z:
         print(x, "é o menor número")
-    elif y < x and y < z:
+    elif y <= x and y <= z:
         print(y, "é o menor número")
     else:
         print(z, "é o menor número")
